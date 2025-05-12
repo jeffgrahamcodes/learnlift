@@ -16,7 +16,7 @@ if not os.getenv("OPENAI_API_KEY"):
 app = FastAPI()
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000"],  # or ["*"] for dev only
+    allow_origins=["https://learnlift.vercel.app"],  # ✅ Your Vercel frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
