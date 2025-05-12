@@ -2,6 +2,8 @@ import os
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from app.api import feedback
+from fastapi.middleware.cors import CORSMiddleware
+
 
 # ✅ Load .env before anything else
 load_dotenv()
@@ -12,4 +14,11 @@ if not os.getenv("OPENAI_API_KEY"):
 
 # ✅ FastAPI app setup
 app = FastAPI()
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # or ["*"] for dev only
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
 app.include_router(feedback.router, prefix="/api")
