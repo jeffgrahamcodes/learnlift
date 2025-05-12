@@ -14,11 +14,14 @@ export default function FeedbackForm() {
     setFeedback('');
 
     try {
-      const res = await fetch('http://localhost:8000/api/feedback', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ text, grade_level: gradeLevel }),
-      });
+      const res = await fetch(
+        'https://learnlift-3gca.onrender.com/api/feedback',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ text, grade_level: gradeLevel }),
+        }
+      );
 
       const data = await res.json();
       setFeedback(data.feedback);
