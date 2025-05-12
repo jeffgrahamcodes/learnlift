@@ -22,7 +22,7 @@ export default function FeedbackForm() {
 
       const data = await res.json();
       setFeedback(data.feedback);
-    } catch (err) {
+    } catch {
       setFeedback('Error getting feedback. Please try again.');
     } finally {
       setLoading(false);
