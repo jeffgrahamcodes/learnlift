@@ -7,7 +7,6 @@
 ## Live Demo
 
 🔗 Frontend: [learnlift.vercel.app](https://learnlift.vercel.app)
-🔗 API: [learnlift-3gca.onrender.com](https://learnlift-3gca.onrender.com)
 
 ---
 
